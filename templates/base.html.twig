@@ -1,3 +1,5 @@
+{% include '_navbar.html.twig' %}
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -19,7 +21,7 @@
 		{% endblock %}
 	</head>
 	<body>
-		<header>{% include('_navbar.html.twig') %}</header>
-		{% block body %}{% endblock %}
+		{% block header %}{% endblock %}
+		{% block body %}{% endblock %} 
 	</body>
 </html>
