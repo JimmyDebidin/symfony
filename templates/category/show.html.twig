@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+	Séries Horreur
+{% endblock %}
+
+{% block body %}
+	<h1>Les Séries dans la catégorie {{ category.name }}:</h1>
+	{% for program in programs %}
+		<div>
+			<a href="{{ path("program_show", { id: program.id }) }}">
+				<h2>{{ program.id }}
+					/
+					{{ program.title }}</h2>
+			</a>
+			<p>{{ program.summary }}</p>
+		</div>
+	{% else %}
+		Aucune série trouvée.
+	{% endfor %}
+	<a href="{{ path('category_index') }}">
+		Retour à la liste des catégories
+	</a>
+{% endblock %}
