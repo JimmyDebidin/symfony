@@ -31,7 +31,7 @@ class CategoryController extends AbstractController
 
     public function show(CategoryRepository $categoryRepository, string $categoryName, ProgramRepository $programRepository): Response
     {
-        $category = $categoryRepository->findOneBy(['name' => $categoryName]);
+        $category = $categoryRepository->findOneByName(['name' => $categoryName]);
         if (!$category) {
             throw $this->createNotFoundException("Aucune série trouvée dans la catégorie : $categoryName");
         }
