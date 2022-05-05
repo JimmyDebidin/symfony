@@ -21,8 +21,8 @@ class Program
 
     #[ORM\Column(type: 'string', length: 255, nullable: true)]
     private $poster;
-
-    #[ORM\ManyToOne(targetEntity: Category::class)]
+    
+    #[ORM\ManyToOne(targetEntity: Category::class, inversedBy: "programs")]
     #[ORM\JoinColumn(nullable: false)]
     private $category;
 
